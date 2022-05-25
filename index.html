@@ -1,130 +1,176 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HOL</title>
+        <!-- <link rel="icon" href="./logo.png" style="width:100px; height:auto;">
+         -->
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-<head>
-  <link rel="stylesheet" href="main.css">
-  <link href='https://fonts.googleapis.com/css?family=Lato:200,300,400,700' rel='stylesheet' type='text/css'>
-<link href="https://fonts.googleapis.com/css?family=Muli:200,300" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-</head>
+        <!--Vue 3.0-->
+        <script src="https://unpkg.com/vue@next"></script> 
 
-<body>
-	<section class="bg-color-grey banner">
-		<div class="container">
-			<div class="row">
-				<div class="col"></div>
-				<div class="col is-5">
-					<img class="profile-pic" src="preston.jpg" alt="Profile Picture">
-				</div>
-				<div class="col"></div>
-			</div>
-		</div>
-	</section>
+        <!--Lodash for deep copy-->
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
 
-	<section class="bg-color-white primary-info">
-		<div class="container">
-			<div class="row name-title-company">
-				<div class="col is-6">
-					<p class="text-name">Preston Lim</p>
-					<p class="text-title-company">Associate Software Engineer</p>
-					<p class="text-title-company">Data Science Division, GovTech</p>
-				</div>
-				<div class="col">
-					<img src="assets/govtech-logo-blue.svg" alt="Company Logo">
-				</div>
-			</div>
-		</div>
-	</section>
+        <!--CSS-->
+        <link rel="stylesheet" href="./contact.css">
 
-	<section class="bg-color-white secondary-info">
-		<a href="mailto:preston@data.gov.sg">
-			<div class="container">
-				<div class="row detail">
-					<div class="col">
-						<img src="assets/icon-email.svg" alt="Email Icon"">
-					</div>
-					<div class="col is-8">
-						<p class="text-detail">preston@data.gov.sg</p>
-					</div>
-					<div class="col">
-						<img src="assets/right-arrow.svg" alt="Right Arrow" height="50%" width="40%">
-					</div>
-				</div>
-			</div>
-		</a>
-	</section>
+        <style>
+            img {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30%;
+    width: 30%;
+    object-fit: contain;
+}
+        </style>
+        
+    </head>
 
-	<section class="bg-color-white secondary-info">
-		<a href="tel:+6591234567">
-			<div class="container">
-				<div class="row detail">
-					<div class="col">
-						<img src="assets/icon-phone.svg" alt="Phone Icon"">
-					</div>
-					<div class="col is-8">
-						<p class="text-detail">(+65) 9123 4567</p>
-					</div>
-					<div class="col">
-						<img src="assets/right-arrow.svg" alt="Right Arrow" height="50%" width="40%">
-					</div>
-				</div>
-			</div>
-		</a>
-	</section>
-
-	<section class="bg-color-white secondary-info">
-		<a href="https://www.tech.gov.sg">
-			<div class="container">
-				<div class="row detail">
-					<div class="col">
-						<img src="assets/icon-website.svg" alt="Website Icon"">
-					</div>
-					<div class="col is-8">
-						<p class="text-detail">tech.gov.sg</p>
-					</div>
-					<div class="col">
-						<img src="assets/right-arrow.svg" alt="Right Arrow" height="50%" width="40%">
-					</div>
-				</div>
-			</div>
-		</a>
-	</section>
-
-	<section class="bg-color-white secondary-info">
-		<a href="https://www.google.com.sg/maps/place/GovTech+Hive/@1.2998708,103.7871504,17z/
-		data=!3m1!4b1!4m5!3m4!1s0x31da1a457344a501:0x2202a995a6abc728!8m2!3d1.2998708!4d103.7893391">
-			<div class="container">
-				<div class="row detail">
-					<div class="col">
-						<img src="assets/icon-address.svg" alt="Address Icon"">
-					</div>
-					<div class="col is-8">
-						<p class="text-detail">1 Fusionopolis, Sandcrawler, #09-01, 138577</p>
-					</div>
-					<div class="col">
-						<img src="assets/right-arrow.svg" alt="Right Arrow" height="50%" width="40%">
-					</div>
-				</div>
-			</div>
-		</a>
-	</section>
-
-	<section class="bg-color-white bottom">
-		<div class="container">
-			<div class="row">
-				<div class="col"></div>
-				<div class="col is-5">
-					<div class="button">
-						<a href="user.vcf">
-							<p class="button">Download</p>
-						</a>
-					</div>
-				</div>
-				<div class="col"></div>
-			</div>
-		</div>
-	</section>
-
-</body>
-
+    <body>
+        <section class="bg-color-grey banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col is-5">
+                        <img class="profile-pic"  src="./HOL_logo_color_grey.png" alt="Profile Picture">
+                    </div> 
+                    <div class="col"></div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="bg-color-white primary-info">
+            <div class="container">
+                <div class="row name-title-company">
+                    <div class="col is-6">
+                        <p class="text-name">Rhys Tan
+    </p>
+                        <p class="text-title-company">UIUX Intern
+    
+    
+    </p>
+                        <p class="text-title-company">HOL Experiences Pte Ltd
+    </p>
+                    </div>
+                    <div class="col">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="bg-color-white secondary-info">
+            <a href="mailto:rtan@hol.sg
+    ">
+                <div class="container">
+                    <div class="row detail">
+                        <div class="col">
+                            <img src="./svg/icon_email.svg" alt="Email Icon"">
+                        </div>
+                        <div class="col is-8">
+                            <p class="text-detail">rtan@hol.sg
+    </p>
+                        </div>
+                        <div class="col">
+                            <img src="./right-arrow.png" alt="Right Arrow" height="50%" width="40%">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </section>
+    
+        <section class="bg-color-white secondary-info">
+            <a href="tel:+6586684321">
+                <div class="container">
+                    <div class="row detail">
+                        <div class="col">
+                            <img src="./svg/icon_phone.svg" alt="Phone Icon"">
+                        </div>
+                        <div class="col is-8">
+                            <p class="text-detail">(+65) 8668 4321</p>
+                        </div>
+                        <div class="col">
+                            <img src="./right-arrow.png" alt="Right Arrow" height="50%" width="40%">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </section>
+        <section class="bg-color-white secondary-info">
+            <a href="tel:+6569747858">
+                <div class="container">
+                    <div class="row detail">
+                        <div class="col">
+                            <img src="./svg/icon_phone.svg" alt="Office Icon"">
+                        </div>
+                        <div class="col is-8">
+                            <p class="text-detail">(+65) 6974 7858</p>
+                        </div>
+                        <div class="col">
+                            <img src="./right-arrow.png" alt="Right Arrow" >
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </section>
+        <section class="bg-color-white secondary-info">
+            <a href="https://www.hol.sg">
+                <div class="container">
+                    <div class="row detail">
+                        <div class="col">
+                            <img src="./svg/icon_website.svg" alt="Website Icon"">
+                        </div>
+                        <div class="col is-8">
+                            <p class="text-detail">www.hol.sg</p>
+                        </div>
+                        <div class="col">
+                            <img src="./right-arrow.png" alt="Right Arrow" height="50%" width="40%">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </section>
+    
+        <section class="bg-color-white secondary-info">
+            <a href="https://www.google.com/maps/place/71+Oxley+Rise,+Singapore+238698/@1.297371,103.8409453,17z/data=!3m1!4b1!4m5!3m4!1s0x31da19983f1213a9:0x3c335e0913d17acc!8m2!3d1.297371!4d103.843134">
+                <div class="container">
+                    <div class="row detail">
+                        <div class="col">
+                            <img src="./svg/icon_address.svg" alt="Address Icon">
+                        </div>
+                        <div class="col is-8">
+                            <p class="text-detail">71 Oxley Rise, #02-15
+    Singapore 238698</p>
+                        </div>
+                        <div class="col">
+                            <img src="./right-arrow.png" alt="Right Arrow" height="50%" width="40%">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </section>
+    
+        <section class="bg-color-white bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col is-5">
+                        <div class="button">
+                            <a href="./rhys.vcf">
+                                <p class="button">Save Contact</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+        </section>
+    </body>
 </html>
